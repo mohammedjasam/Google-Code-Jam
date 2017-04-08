@@ -2,6 +2,7 @@ import sys
 n = int(input())
 
 for i in range(n):
+    # i=+1
     d={}
     s,k=input().split()
     s=list(s)
@@ -10,6 +11,7 @@ for i in range(n):
     # print(d)
     c=0
     for j in range(len(d)):
+        imp=False
         # d[j]=s[j]
         if d[j]!='-':
             pass
@@ -23,8 +25,12 @@ for i in range(n):
                     else:
                         d[j+x]='+'
                 except:
-                    print('IMPOSSIBLE')
-                    sys.exit()
+                    imp=True
+                    print("Case #{0}: {1}".format(i+1, 'IMPOSSIBLE'))
+                    break
+                    print('Hi')
+            if imp==True:
+                break
             c+=1
-                # print(d)
-    print(c)
+    if imp==False:
+        print("Case #{0}: {1}".format(i+1, c))
