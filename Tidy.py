@@ -6,7 +6,7 @@ def ordertest(i,s):
         print("Case #{0}: {1}".format(i, s))
     else:
         ordertest(i,s-1)
-        
+
 for i in range(n):
     s=int(input())
     res=ordertest(i+1,s)

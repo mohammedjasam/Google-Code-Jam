@@ -112,4 +112,4 @@ for i in range(n):
         # print(maxarr)
         # print("===================================================")
 
-    print(finalmax,finalmin)
+    print("Case #{0}: {1} {2}".format(i+1,finalmax, finalmin))
