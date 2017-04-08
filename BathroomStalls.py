@@ -1,7 +1,4 @@
 n = int(input())
-
-
-
 def checkLeft(l,s):
     c=0
     length=len(l)
@@ -36,13 +33,13 @@ for i in range(n):
         l2.append((-1,-1))
     l2.append((-1,-1))
 
-    print("Initial l1 & l2")
-    print(l1)
-    print(l2)
-    print()
+    # print("Initial l1 & l2")
+    # print(l1)
+    # print(l2)
+    # print()
     for abc in range(k):
-        print()
-        print("Iteration #" +str(abc+1))
+        # print()
+        # print("Iteration #" +str(abc+1))
 
          ########## Created the toilet room
         # print(l1)
@@ -65,11 +62,11 @@ for i in range(n):
                 # print(minarr)
                 minarr.append(min(left,right))
                 maxarr.append(max(left,right))
-        print("l1 and l2 is:")
-        print(l1)
-        print(l2)
-        print("Minarr is:")
-        print(minarr)
+        # print("l1 and l2 is:")
+        # print(l1)
+        # print(l2)
+        # print("Minarr is:")
+        # print(minarr)
 
 
         maxsubarr=[]
@@ -82,8 +79,8 @@ for i in range(n):
                 maxi=temp
                 maxsubarr.append(aj)
         templ=[]
-        print("Maxarr is:")
-        print(maxarr)
+        # print("Maxarr is:")
+        # print(maxarr)
 
         # if there are more than one max element in min array!!
         if len(maxsubarr)>1:
@@ -91,11 +88,11 @@ for i in range(n):
                 del maxsubarr[0]
             for x in maxsubarr:
                 templ.append(maxarr[x])
-                print(maxarr[x])
+                # print(maxarr[x])
             counter=0
             maximum=max(templ)
             for x in templ:
-                
+
                 if maximum <= x:
                     counter+=1
             if counter>1:
@@ -110,9 +107,9 @@ for i in range(n):
             l1[maxsubarr[0]]=1
             minarr[maxsubarr[0]]=-1
             l2[maxsubarr[0]]=1
-        print(maxsubarr)
-        print("Maxarr is:")
-        print(maxarr)
-        print("===================================================")
+        # print(maxsubarr)
+        # print("Maxarr is:")
+        # print(maxarr)
+        # print("===================================================")
 
     print(finalmax,finalmin)
