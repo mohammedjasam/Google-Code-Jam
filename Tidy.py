@@ -1,32 +1,30 @@
 n = int(input())
 ans=0
 def BruteForce(i,s):
-    try:
-        x = [int(x) for  x in str(s)]
-        print('Entering X' )
-        print(x)
+    x = [int(x) for  x in str(s)]
+    # print('Entering X' )
+    # print(x)
 
-        if sorted(x) == x:
-            print(x)
-        else:
-            BruteForce(i,s-1)
-
-    except:
+    if sorted(x) == x:
         return s
+
+    else:
+        return BruteForce(i,s-1)
+
+    # print(s)
 
 
 def logic(i,s):
     temp=s
 
     for i in range(len(s),1,-1):
-        # print(i,s[i-1])
-
+        print(s)
         print(i)
         x=i-1
         if s[x-2]>=s[x-1]:
+            print(s[x-1],s[x-1])
             if i>-1:
-                # print(s[x],s[x-1])
-                while s[x-1]>=s[x]:
+                while s[x-1]>s[x]:
                     aj=s[x-1]
                     ai=s[x]
 
@@ -38,36 +36,18 @@ def logic(i,s):
                         aj+=10
                     s[x-1]=aj
                     s[x]=ai
-                    print(s)
-                print("yes")
-                print(s[x-1],s[x])
+                if s[x-1]==s[x]:
+                    pass
         else:
             x1=int(str(s[x-1])+str(s[x]))
-            print('x1 is ')
-            print(x1)
-            try:
-                x1=str(BruteForce(i,x1))
-            except:
-                x1=ans
-            print('x1 after bf '+str(x1))
+            x1=str(BruteForce(i,x1))
             s[x-1]=int(x1[0])
             s[x]=int(x1[1])
-        #     else:
-    #         string=""
-    #         string+=str(s[i-2]) + str(s[i-1])+str(s[i])
-    #         print(string)
-    #         string=str(BruteForce(i,int(string)))
-    #         string=list(string)
-    #         string=reversed(string)
-    #         print(string)
-    #         s[i],s[i-1],s[i-2]=string[0],string[1],string[2]
-    # print(s)
+    return logic(i,s)
 
-    # if sorted(x) == x:
-    #     print("Case #{0}: {1}".format(i, s))
+    return s
 
-    # else:
-    #     check(i,s-1)
+
 def ordertest(i,s):
     x = [int(x) for  x in str(s)]
     if sorted(x) == x:
@@ -83,6 +63,8 @@ for i in range(n):
 
     if len(s)>2:
         res=logic(i+1,s)
+        print("Final Result is")
+        print(res)
     elif len(s)==2:
         res=ordertest(i+1,temp)
     elif len(s)==1:
