@@ -2,28 +2,20 @@ n = int(input())
 ans=0
 def BruteForce(i,s):
     x = [int(x) for  x in str(s)]
-    # print('Entering X' )
-    # print(x)
-
     if sorted(x) == x:
         return s
 
     else:
         return BruteForce(i,s-1)
 
-    # print(s)
-
 
 def logic(i,s):
     temp=s
 
     for i in range(len(s),1,-1):
-        # print(s)
-        # print(i)
         x=i-1
 
         if s[x-2]>=s[x-1]:
-            # print(s[x-1],s[x-1])
             if i>-1:
                 if s[x-1]==0 and s[x]==0:
                     s[x-1]=9
@@ -73,9 +65,6 @@ for i in range(n):
 
     if len(s)>2:
         res=logic(i+1,s)
-
-
-        # print("Final Result is")
         r1=""
         if res[0]==0:
             del res[0]
