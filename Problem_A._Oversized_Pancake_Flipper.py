@@ -28,7 +28,5 @@ if __name__ == "__main__":
     for case in range(1, T+1):
         S = f.readline().strip()
         strr, k = S.split()
-        # print(strr)
-        # print(k)
         solution = solve(S,k)
         print("Case #{0}: {1}".format(case, solution))
